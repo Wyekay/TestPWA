@@ -1,7 +1,7 @@
 let resources = [
-    "/",
-    "/index.html",
-    "/ttst.png",
+    "./",
+    "./index.html",
+    "./ttst.png",
 ]
 
 self.addEventListener("install", (e)=>{
