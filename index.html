@@ -36,6 +36,7 @@
       }
 
       window.addEventListener("beforeinstallprompt", function (event) {
+        console.log("Asking for installing");
         event.preventDefault();
         e = event;
         installbtn.classList.add("show");
