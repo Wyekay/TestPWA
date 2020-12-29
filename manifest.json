@@ -1,0 +1,16 @@
+{
+  "short_name": "Test PWA",
+  "name": "Test PWS",
+  "description": "A Simple Test PWA",
+  "icons": [
+    {
+      "src": "./ttst.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "theme_color": "#fff"
+}

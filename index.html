@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test PWA</title>
+    <link rel="shortcut icon" href="./ttst.png" type="image/png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <style>
+      .hide {
+        display: none;
+      }
+      .show {
+        display: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test PWA</h1>
+    <img src="./ttst.png" style="width: 200px; height: auto" />
+    <p>This is a test PWA</p>
+
+    <button class="installbtn hide">Install app as a pwa</button>
+
+    <script>
+      let e;
+      let installbtn = document.querySelector(".installbtn");
+
+      if ("serviceWorker" in navigator) {
+        try {
+          navigator.serviceWorker.register("sw.js");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      window.addEventListener("beforeinstallprompt", function (event) {
+        event.preventDefault();
+        e = event;
+        installbtn.classList.add("show");
+      });
+
+      installbtn.addEventListener("click", () => {
+        e.prompt();
+        installbtn.classList.add("hide");
+      });
+    </script>
+  </body>
+</html>
